@@ -14,7 +14,7 @@ public class PausedActive : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.inven || GameManager.Instance.shop)
+        if (GameManager.Instance.shop || GameManager.Instance.equipShop)
             return;
 
         if (Input.GetKeyDown(KeyCode.Escape))

@@ -18,27 +18,18 @@ public class ShopNPC : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.Instance.paused || GameManager.Instance.inven)
+        if (GameManager.Instance.paused || GameManager.Instance.equipShop || GameManager.Instance.talkEvent)
             return;
 
         distance = new Vector3(player.transform.position.x - gameObject.transform.position.x, gameObject.transform.position.y, player.transform.position.z - gameObject.transform.position.z);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (!shopCanvas.activeSelf)
+            if (!shopCanvas.activeSelf && Mathf.Abs(distance.magnitude) < 2.5f)
             {
-                if (Mathf.Abs(distance.magnitude) < 2.5f)
-                {
-                    GameManager.Instance.OpenShop();
-                    GameManager.Instance.CursorOn();
-                    shopCanvas.SetActive(true);
-                }
-            }
-            else
-            {
-                GameManager.Instance.CloseShop();
-                GameManager.Instance.CursorOff();
-                shopCanvas.SetActive(false);
+                GameManager.Instance.OpenShop();
+                GameManager.Instance.CursorOn();
+                shopCanvas.SetActive(true);
             }
         }
 

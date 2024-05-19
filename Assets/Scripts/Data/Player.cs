@@ -53,6 +53,85 @@ public class Player : MonoBehaviour
     public int[] slotPrice;
     public Sprite[] slotIcon;
 
+    public int[] quickSlotId;
+    public int[] quickSlotCnt;
+    public string[] quickSlotName;
+    public float[] quickSlotRecoveryHP;
+    public float[] quickSlotRecoveryMP;
+    public int[] quickSlotPrice;
+    public Sprite[] quickSlotIcon;
+
+    public int[] equipId;
+    public string[] equipType;
+    public string[] equipName;
+    public float[] equipAtk;
+    public float[] equipMtk;
+    public float[] equipDef;
+    public float[] equipMdf;
+    public float[] equipHP; 
+    public float[] equipMP; 
+    public int[] equipPrice;
+    public Sprite[] equipIcon;
+
+    public int[] equipSlotId;
+    public string[] equipSlotType;
+    public string[] equipSlotName;
+    public float[] equipSlotAtk;
+    public float[] equipSlotMtk;
+    public float[] equipSlotDef;
+    public float[] equipSlotMdf;
+    public float[] equipSlotHP;
+    public float[] equipSlotMP;
+    public int[] equipSlotPrice;
+    public Sprite[] equipSlotIcon;
+
+    public int equipedWeaponId;
+    public string equipedWeaponType;
+    public string equipedWeaponName;
+    public float equipedWeaponAtk;
+    public float equipedWeaponMtk;
+    public float equipedWeaponDef;
+    public float equipedWeaponMdf;
+    public float equipedWeaponHP;
+    public float equipedWeaponMP;
+    public int equipedWeaponPrice;
+    public Sprite equipedWeaponIcon;
+
+    public int equipedClothesId;
+    public string equipedClothesType;
+    public string equipedClothesName;
+    public float equipedClothesAtk;
+    public float equipedClothesMtk;
+    public float equipedClothesDef;
+    public float equipedClothesMdf;
+    public float equipedClothesHP;
+    public float equipedClothesMP;
+    public int equipedClothesPrice;
+    public Sprite equipedClothesIcon;
+
+    public int equipedAccessoriesId;
+    public string equipedAccessoriesType;
+    public string equipedAccessoriesName;
+    public float equipedAccessoriesAtk;
+    public float equipedAccessoriesMtk;
+    public float equipedAccessoriesDef;
+    public float equipedAccessoriesMdf;
+    public float equipedAccessoriesHP;
+    public float equipedAccessoriesMP;
+    public int equipedAccessoriesPrice;
+    public Sprite equipedAccessoriesIcon;
+
+    public float BGMValue;
+    public float SEValue;
+    public bool fullScreen;
+
+    public int[] questId;
+    public int[] questState;
+    public int[] questValue;
+    public int[] questCompleteValue;
+    public int[] questRewardMoney;
+    public float[] questRewardExp;
+
     public static Player instance;
 
     private void Awake()
@@ -88,5 +167,10 @@ public class Player : MonoBehaviour
         mtk = lvMtk[lv];
         def = lvDef[lv];
         mdf = lvMdf[lv];
+
+        if (fullScreen)
+            Screen.SetResolution(1920, 1080, true);
+        else
+            Screen.SetResolution(1280, 720, false);
     }
 }

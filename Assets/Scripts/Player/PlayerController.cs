@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private float lastJump;
     private float lastLand;
+    private float lastHit;
 
     private bool run;
     public bool dash;
@@ -86,10 +87,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.paused || GameManager.Instance.inven || GameManager.Instance.shop)
+        if (GameManager.Instance.paused || GameManager.Instance.shop || GameManager.Instance.equipShop || GameManager.Instance.talkEvent)
             return;
 
         Die();
+        Revive();
 
         if (die || stun)
             return;
@@ -104,10 +106,11 @@ public class PlayerController : MonoBehaviour
     {
         Player.instance.playerPos = gameObject.transform.position;
 
-        if (die || stun || GameManager.Instance.paused || GameManager.Instance.inven || GameManager.Instance.shop)
+        if (die || stun || GameManager.Instance.paused || GameManager.Instance.shop || GameManager.Instance.equipShop || GameManager.Instance.talkEvent)
             return;
 
         lastJump += Time.deltaTime;
+        lastHit += Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -275,7 +278,6 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-        rigidbody.velocity = Vector3.zero;
         dash = false;
         runSpeed = 6;
 
@@ -384,6 +386,20 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Die");
         }
     }
+
+    private void Revive()
+    {
+        if (GameManager.Instance.paused)
+            return;
+
+        if (die && Input.GetKeyDown(KeyCode.R))
+        {
+            Player.instance.curHP = Player.instance.maxHP;
+            animator.SetTrigger("Revive");
+            gameObject.transform.position = new Vector3(0, 0, 0);
+            die = false;
+        }
+    }
     #endregion
 
     // Collision & Trigger
@@ -420,8 +436,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("MonsterAttack") && !die && !hit && !dash)
+        if (other.gameObject.CompareTag("MonsterAttack") && !die && !hit && !dash && lastHit > 0.1f)
         {
+            lastHit = 0;
             StartCoroutine(Hit());
         }
     }

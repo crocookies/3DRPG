@@ -84,6 +84,85 @@ public class JsonSerialize
             player.slotRecoveryMP = data.slotRecoveryMP;
             player.slotPrice = data.slotPrice;
             player.slotIcon = data.slotIcon;
+
+            player.quickSlotId = data.quickSlotId;
+            player.quickSlotCnt = data.quickSlotCnt;
+            player.quickSlotName = data.quickSlotName;
+            player.quickSlotRecoveryHP = data.quickSlotRecoveryHP;
+            player.quickSlotRecoveryMP = data.quickSlotRecoveryMP;
+            player.quickSlotPrice = data.quickSlotPrice;
+            player.quickSlotIcon = data.quickSlotIcon;
+
+            player.equipId = data.equipId;
+            player.equipType = data.equipType;
+            player.equipName = data.equipName;
+            player.equipAtk = data.equipAtk;
+            player.equipMtk = data.equipMtk;
+            player.equipDef = data.equipDef;
+            player.equipMdf = data.equipMdf;
+            player.equipHP = data.equipHP;
+            player.equipMP = data.equipMP;
+            player.equipPrice = data.equipPrice;
+            player.equipIcon = data.equipIcon;
+
+            player.equipSlotId = data.equipSlotId;
+            player.equipSlotType = data.equipSlotType;
+            player.equipSlotName = data.equipSlotName;
+            player.equipSlotAtk = data.equipSlotAtk;
+            player.equipSlotMtk = data.equipSlotMtk;
+            player.equipSlotDef = data.equipSlotDef;
+            player.equipSlotMdf = data.equipSlotMdf;
+            player.equipSlotHP = data.equipSlotHP;
+            player.equipSlotMP = data.equipSlotMP;
+            player.equipSlotPrice = data.equipSlotPrice;
+            player.equipSlotIcon = data.equipSlotIcon;
+
+            player.equipedWeaponId = data.equipedWeaponId;
+            player.equipedWeaponType = data.equipedWeaponType;
+            player.equipedWeaponName = data.equipedWeaponName;
+            player.equipedWeaponAtk = data.equipedWeaponAtk;
+            player.equipedWeaponMtk = data.equipedWeaponMtk;
+            player.equipedWeaponDef = data.equipedWeaponDef;
+            player.equipedWeaponMdf = data.equipedWeaponMdf;
+            player.equipedWeaponHP = data.equipedWeaponHP;
+            player.equipedWeaponMP = data.equipedWeaponMP;
+            player.equipedWeaponPrice = data.equipedWeaponPrice;
+            player.equipedWeaponIcon = data.equipedWeaponIcon;
+
+            player.equipedClothesId = data.equipedClothesId;
+            player.equipedClothesType = data.equipedClothesType;
+            player.equipedClothesName = data.equipedClothesName;
+            player.equipedClothesAtk = data.equipedClothesAtk;
+            player.equipedClothesMtk = data.equipedClothesMtk;
+            player.equipedClothesDef = data.equipedClothesDef;
+            player.equipedClothesMdf = data.equipedClothesMdf;
+            player.equipedClothesHP = data.equipedClothesHP;
+            player.equipedClothesMP = data.equipedClothesMP;
+            player.equipedClothesPrice = data.equipedClothesPrice;
+            player.equipedClothesIcon = data.equipedClothesIcon;
+
+            player.equipedAccessoriesId = data.equipedAccessoriesId;
+            player.equipedAccessoriesType = data.equipedAccessoriesType;
+            player.equipedAccessoriesName = data.equipedAccessoriesName;
+            player.equipedAccessoriesAtk = data.equipedAccessoriesAtk;
+            player.equipedAccessoriesMtk = data.equipedAccessoriesMtk;
+            player.equipedAccessoriesDef = data.equipedAccessoriesDef;
+            player.equipedAccessoriesMdf = data.equipedAccessoriesMdf;
+            player.equipedAccessoriesHP = data.equipedAccessoriesHP;
+            player.equipedAccessoriesMP = data.equipedAccessoriesMP;
+            player.equipedAccessoriesPrice = data.equipedAccessoriesPrice;
+            player.equipedAccessoriesIcon = data.equipedAccessoriesIcon;
+
+            player.BGMValue = data.BGMValue;
+            player.SEValue = data.SEValue;
+            player.fullScreen = data.fullScreen;
+
+            player.questId = data.questId;
+            player.questState = data.questState;
+            player.questValue = data.questValue;
+            player.questCompleteValue = data.questCompleteValue;
+            player.questRewardMoney = data.questRewardMoney;
+            player.questRewardExp = data.questRewardExp;
         }
     }
 }
